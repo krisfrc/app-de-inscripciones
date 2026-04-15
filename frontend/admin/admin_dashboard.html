@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Sistema Escolar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>🏫 Sistema Escolar - Panel de Administración</h1>
+        <div class="user-info">
+            <span id="user-greeting"></span>
+            <span id="user-email" style="font-size: 0.8rem; opacity: 0.8;"></span>
+            <button id="logout-btn" class="logout-btn">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <h3>Total Estudiantes</h3>
+            <div class="number" id="total-estudiantes">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Inscripciones Activas</h3>
+            <div class="number" id="total-inscripciones">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Usuarios Registrados</h3>
+            <div class="number" id="total-usuarios">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Estudiantes por Grado</h3>
+            <div id="grados-stats"></div>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="estudiantes">📚 Estudiantes</button>
+        <button class="tab-btn" data-tab="usuarios">👥 Usuarios</button>
+        <button class="tab-btn" data-tab="inscripciones">📝 Inscripciones</button>
+        <button class="tab-btn" data-tab="direcciones">📍 Direcciones</button>
+    </div>
+
+    <!-- Panel Estudiantes -->
+    <div id="estudiantes" class="tab-content active">
+        <div class="form-section">
+            <h3>➕ Registrar Nuevo Estudiante</h3>
+            <form id="estudiante-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido:</label>
+                        <input type="text" name="apellido" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Cédula Escolar:</label>
+                        <input type="text" name="cedula_escolar">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha Nacimiento:</label>
+                        <input type="date" name="fecha_nacimiento">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Grado:</label>
+                    <select name="grado_id" id="estudiante-grado" required>
+                        <option value="">Cargando grados...</option>
+                    </select>
+                </div>
+                <button type="submit">Registrar Estudiante</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>📋 Lista de Estudiantes</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Nombre</th><th>Cédula Escolar</th><th>Grado</th>
+                            <th>Fecha Nac.</th><th>Tutor</th><th>Estado</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="estudiantes-container">
+                        <tr><td colspan="8" class="text-center">Cargando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Usuarios -->
+    <div id="usuarios" class="tab-content">
+        <div class="form-section">
+            <h3>👥 Lista de Usuarios del Sistema</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Nombre</th><th>Cédula</th><th>Email</th>
+                            <th>Teléfono</th><th>Rol</th><th>Estado</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuarios-container">
+                        <tr><td colspan="8" class="text-center">Cargando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Inscripciones -->
+    <div id="inscripciones" class="tab-content">
+        <div class="form-section">
+            <h3>➕ Nueva Inscripción</h3>
+            <form id="inscripcion-form">
+                <div class="form-group">
+                    <label>Estudiante:</label>
+                    <select name="estudiante_id" id="inscripcion-estudiante" required>
+                        <option value="">Cargando estudiantes...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Período Académico:</label>
+                    <input type="text" name="periodo_academico" placeholder="Ej: 2024-1" required>
+                </div>
+                <div class="form-group">
+                    <label>Observaciones:</label>
+                    <textarea name="observaciones" rows="2"></textarea>
+                </div>
+                <button type="submit">Crear Inscripción</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>📋 Lista de Inscripciones</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Usuario</th><th>Estudiante</th><th>Grado</th>
+                            <th>Período</th><th>Estado</th><th>Fecha</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inscripciones-container">
+                        <tr><td colspan="8" class="text-center">Cargando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Direcciones -->
+    <div id="direcciones" class="tab-content">
+        <div class="form-section">
+            <h3>➕ Agregar Dirección</h3>
+            <form id="direccion-form">
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <select name="usuario_id" id="direccion-usuario" required>
+                        <option value="">Cargando usuarios...</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Calle:</label>
+                        <input type="text" name="calle">
+                    </div>
+                    <div class="form-group">
+                        <label>Avenida:</label>
+                        <input type="text" name="avenida">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Sector:</label>
+                        <input type="text" name="sector">
+                    </div>
+                    <div class="form-group">
+                        <label>Número Casa:</label>
+                        <input type="text" name="numero_casa">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ciudad:</label>
+                        <input type="text" name="ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label>Estado/Provincia:</label>
+                        <input type="text" name="estado">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Código Postal:</label>
+                    <input type="text" name="codigo_postal">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="es_principal"> Marcar como dirección principal
+                    </label>
+                </div>
+                <button type="submit">Agregar Dirección</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>📍 Lista de Direcciones</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuario</th><th>Dirección</th><th>N°</th><th>Sector</th>
+                            <th>Ciudad/Estado</th><th>Principal</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="direcciones-container">
+                        <tr><td colspan="7" class="text-center">Cargando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard-admin.js"></script>
+    <script>
+        // Tabs functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

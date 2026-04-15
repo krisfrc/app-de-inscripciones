@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Registro - Escuela Ejemplo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+         <!-- Botón Volver al Home -->
+        <div class="home-button">
+            <a href="../index.html" class="btn-home">← Volver al Home</a>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="auth-form">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" name="cedula" placeholder="Cédula" required>
+            <input type="password" name="contraseña" placeholder="Contraseña" required>
+            <button type="submit" class="btn btn-login">Ingresar</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-form" class="auth-form">
+            <h2>Registro</h2>
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="text" name="apellido" placeholder="Apellido" required>
+            <input type="text" name="cedula" placeholder="Cédula" required>
+            <input type="password" name="contraseña" placeholder="Contraseña" required>
+            <button type="submit" class="btn btn-register">Registrarse</button>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

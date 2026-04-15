@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La cuadra de Bolivar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <h1>E.U "La cuadra de Bolivar"</h1>
+     <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+       <div class="auth-buttons-main">
+    <!-- Quitamos el / inicial para que sea una ruta relativa -->
+    <a href="login/login.html?form=login" class="btn-login">Login</a>
+    <a href="login/login.html?form=register" class="btn-register">Registro</a>
+</div>
+    </nav>
+</header>
+
+
+ <section id="inicio" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="badge-icon">🏛️</span>
+            <span class="badge-text">Excelencia Académica</span>
+        </div>
+        
+        <h1 class="hero-title">
+            <span class="title-small">Bienvenidos a la</span>
+            <span class="title-main">Escuela básica nacional</span>
+            <span class="title-highlight">La cuadra de Bolívar</span>
+        </h1>
+        
+        <div class="hero-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">✨</span>
+            <span class="divider-line"></span>
+        </div>
+        
+        <p class="hero-subtitle">
+            "Formamos estudiantes preparados para el futuro, líderes con visión humanista y excelencia profesional"
+        </p>
+        
+        <div class="hero-buttons">
+            <button id="btn-saludo" class="btn-glow">
+                <span class="btn-content">
+                    <span class="btn-icon">🎓</span>
+                    Descubre tu camino
+                    <span class="btn-hover-icon">→</span>
+                </span>
+            </button>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Años de experiencia</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-number">15k+</span>
+                <span class="stat-label">Estudiantes egresados</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Compromiso académico</span>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una escuela comprometida con la educación de calidad, la innovación y los valores.</p>
+    </section>
+
+   <section id="unermb-info">
+    <div class="unermb-container">
+        <div class="unermb-header">
+            <h2>Escuela Basica <span>" La cuadra de Bolivar "</span></h2>
+            <p class="unermb-slogan">"Formando líderes para el futuro de Venezuela"</p>
+        </div>
+
+        <div class="unermb-content">
+            <div class="unermb-card">
+                <div class="card-icon">🎓</div>
+                <h3>Excelencia Académica</h3>
+                <p>Más de 30 años formando profesionales de alto nivel con programas de estudio actualizados y acreditados.</p>
+            </div>
+
+            <div class="unermb-card">
+                <div class="card-icon">📍</div>
+                <h3>Infraestructura Moderna</h3>
+                <p>Laboratorios equipados, bibliotecas digitales, aulas inteligentes y espacios deportivos de primer nivel.</p>
+            </div>
+
+            <div class="unermb-card">
+                <div class="card-icon">🤝</div>
+                <h3>Convenios Internacionales</h3>
+                <p>Alianzas con universidades de Latinoamérica, Europa y Estados Unidos para intercambios estudiantiles.</p>
+            </div>
+
+            <div class="unermb-card">
+                <div class="card-icon">💼</div>
+                <h3>Alta Empleabilidad</h3>
+                <p>Más del 85% de nuestros egresados se insertan laboralmente en los primeros 6 meses.</p>
+            </div>
+        </div>
+
+        <div class="unermb-stats">
+            <div class="stat-item">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Años de Trayectoria</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15k+</span>
+                <span class="stat-label">Estudiantes Graduados</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Programas de Pregrado</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Países con Convenios</span>
+            </div>
+        </div>
+
+        <div class="unermb-cta">
+            <div class="cta-content">
+                <h3>¿Listo para transformar tu futuro?</h3>
+                <p>Únete a nuestra comunidad académica y descubre todo lo que UNERMB tiene para ti</p>
+                <div class="cta-buttons">
+                    <a href="login/login.html?form=login">
+
+                        <button class="btn-primary" onclick="window.location.href='#inscripcion'">Inscríbete Ahora</button>
+                    </a>
+                    <button class="btn-secondary" onclick="window.location.href='#crear-estudiante'">Más Información</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="unermb-testimonial">
+            <div class="testimonial-icon">⭐</div>
+            <p>"La U.E "La cuadra de Bolivar" me brindó las herramientas necesarias para destacar en mi carrera profesional. La calidad humana y académica es excepcional."</p>
+            <span class="testimonial-author">- María González, Egresada Ingeniería</span>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2026 Escuela Ejemplo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
